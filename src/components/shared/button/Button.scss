@@ -1,0 +1,102 @@
+button {
+  border-radius: 100px;
+  min-width: 150px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 0.9em;
+  font-weight: 700;
+  font-family: 'Braah One';
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  vertical-align: text-bottom;
+
+  &.small {
+    padding: 0.3em 0.6em;
+    font-size: 0.7em;
+    font-weight: 500;
+  }
+
+  &.primary:disabled, &.secondary:disabled {
+    background-color: gray;
+    color: white;
+
+    &.outline {
+      background-color: none;
+      color: gray;
+      border-color: gray;
+    }
+    
+    &:hover, &:active {
+      border: 1px solid gray;
+      filter: none;
+      cursor: default;
+      transition: 1s;
+    }
+  }
+
+  &.primary {
+    background-color: #ffc146;
+    color: #503d16;
+
+    &:hover {
+      border-color: #ffc146;
+      filter: drop-shadow(0 0 0.5em #ffc146);
+    }
+
+    &.outline {
+      background: transparent;
+      color: #ffc146;
+      border: 2px solid #ffc146;
+    }
+
+    &:not(.outline, :disabled):active {
+      background-color: #503d16;
+      color: #806123;
+      border: 2px solid #503d16;
+      filter: none;
+      transform: translateY(2px);
+    }
+
+    &.outline:not(:disabled):active {
+      color: #503d16;
+      border: 2px solid #503d16;
+      filter: none;
+      transform: translateY(2px);
+    }
+  }
+
+  &.secondary {
+    background-color: #cb5554;
+    color: #662b2a;
+
+    &:hover {
+      border-color: #cb5554;
+      filter: drop-shadow(0 0 0.5em #cb5554);
+    }
+
+    &.outline {
+      background: transparent;
+      color: #cb5554;
+      border: 2px solid #cb5554;
+    }
+
+    &:not(.outline, :disabled):active {
+      background-color: #662b2a;
+      color: #9C3030;
+      border: 2px solid #662b2a;
+      filter: none;
+      transform: translateY(2px);
+    }
+
+    &.outline:not(:disabled):active {
+      color: #662b2a;
+      border: 2px solid #662b2a;
+      filter: none;
+      transform: translateY(2px);
+    }
+  }
+}

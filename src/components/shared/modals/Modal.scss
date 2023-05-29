@@ -1,0 +1,23 @@
+.modal {
+    height: 400px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 50px;
+    padding: 20px;
+    background-color: #9c3030;
+
+    .modal-header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.8rem;
+        text-align: center;
+        
+        .title {
+            margin: 0;
+        }
+    }
+}

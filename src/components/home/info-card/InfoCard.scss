@@ -1,0 +1,68 @@
+@keyframes slideInFromBot {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 25%;
+  // background-color: #FFC146;
+  padding: 1rem;
+  border-radius: 25px;
+  position: relative;
+  overflow: hidden;
+
+  &.primary {
+    color: #ffc146;
+    border: 2px solid #ffc146;
+
+    &:hover {
+      // filter: drop-shadow(0 0 0.5em #ffc146);
+      box-shadow: 0 0 15px #ffc146, inset 0 0 10px #ffc146;
+    }
+  }
+
+  &.secondary {
+    color: #db8a8a;
+    border: 2px solid #db8a8a;
+
+    &:hover {
+      // filter: drop-shadow(0 0 0.5em #db8a8a);
+      box-shadow: 0 0 15px #db8a8a, inset 0 0 10px #db8a8a;
+    }
+  }
+
+  &.tertiary {
+    color: #4fb1e5;
+    border: 2px solid #4fb1e5;
+
+    &:hover {
+      // filter: drop-shadow(0 0 0.5em #00B6D5);
+      box-shadow: 0 0 15px #4fb1e5, inset 0 0 10px #4fb1e5;
+    }
+  }
+
+  .title {
+    font-size: 1.5rem;
+    color: white;
+    margin-bottom: 10px;
+  }
+
+  .content {
+    word-wrap: break-word;
+  }
+
+  .image {
+    position: absolute;
+    right: -30px;
+    bottom: -40px;
+    opacity: 0.2;
+    shape-outside: circle(50%);
+  }
+}
