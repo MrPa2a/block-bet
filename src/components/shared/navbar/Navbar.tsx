@@ -1,6 +1,6 @@
 import "./Navbar.scss"
 
-import { ReactComponent as Logo } from '../../../assets/logo.svg'
+import { ReactComponent as Logo } from '../../../../public/assets/logo.svg'
 import { Link, NavLink } from 'react-router-dom'
 import Button from "../button/Button";
 
