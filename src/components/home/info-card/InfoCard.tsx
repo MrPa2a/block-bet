@@ -24,7 +24,7 @@ const InfoCard: React.FC<InfoCardProps> = ({
             </div>
             <div className="content-wrapper">
                 {!noImage && <div className="image">
-                    <img src="/public/assets/dice.png" />
+                    <img src="/public/dice.png" />
                 </div>}
                 <div className="content">
                     {content}

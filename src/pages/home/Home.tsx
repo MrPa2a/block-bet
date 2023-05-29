@@ -43,10 +43,10 @@ function Home() {
                     </div>
                 </div>
                 <div className="hero-image">
-                    <img src="/public/assets/bet-card.png" alt="" />
+                    <img src="/public/bet-card.png" alt="" />
                 </div>
                 <div className="scroll" onClick={scrollDown}>
-                    <img src="/public/assets/double-down-64.png" alt="" />
+                    <img src="/public/double-down-64.png" alt="" />
                 </div>
             </div>
             <div className="info-wrapper" ref={infoSection}>
