@@ -5,7 +5,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Home from './pages/home/Home'
 import Navbar from './components/shared/navbar/Navbar'
 import Games from './pages/games/Games'
-import Modal from './components/shared/modals/Modal';
+// import Modal from './components/shared/modals/Modal';
 
 function App() {
   // const [count, setCount] = useState(0)
