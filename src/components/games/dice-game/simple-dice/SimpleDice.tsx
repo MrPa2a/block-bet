@@ -3,7 +3,10 @@ import './SimpleDice.scss';
 import ThreeDDice from "../3dice/3Dice";
 import Button from "../../../shared/button/Button"
 
-import { ChangeEvent, useEffect, useState } from 'react';
+import RangeSlider from "react-range-slider-input";
+import "react-range-slider-input/dist/style.css";
+
+import { ChangeEvent, SetStateAction, useEffect, useState } from 'react';
 
 function SimpleDice() {
     const [selectedDice, setSelectedDice] = useState([] as number[]);
@@ -17,6 +20,8 @@ function SimpleDice() {
     const [isRollToggled, setIsRollToggled] = useState(false);
     const [isRolling, setIsRolling] = useState(false);
 
+    const MAX = 0.235
+
     const handleRollClick = () => {
         setIsRollToggled(true);
     };
@@ -25,24 +30,37 @@ function SimpleDice() {
         setIsRollToggled(false);
     }
 
-    const handleMultipleBetsClick = (direction: string) => {
-        let newVal = mutipleBets;
-        if (direction === 'up') {
-            newVal++;
-        } else if (direction === 'down' && newVal > 1) {
-            newVal--;
+    // const handleMultipleBetsClick = (direction: string) => {
+    //     let newVal = mutipleBets;
+    //     if (direction === 'up') {
+    //         newVal++;
+    //     } else if (direction === 'down' && newVal > 1) {
+    //         newVal--;
+    //     }
+    //     setMultipleBets(newVal);
+    // }
+
+    const onMultipleBetsChange = (event: ChangeEvent<HTMLInputElement>) => {
+        if (!/[0-9]/.test(event.target.value)) {
+            event.preventDefault();
+        } else {
+            const value = Math.floor(Number(event.target.value))
+            if (value <= 100) {
+                setMultipleBets(value);
+            } else {
+                setMultipleBets(100)
+            }
         }
-        setMultipleBets(newVal);
-    }
+    };
 
     const handleWagerClick = (step?: number) => {
         let newVal = wager;
         if (step == 0) {
             newVal = 0
-        } else if (step) {
+        } else if (step && newVal * step <= MAX) {
             newVal *= step
         } else {
-            newVal = 5648.235
+            newVal = MAX
         }
         setWager(newVal)
     }
@@ -51,6 +69,9 @@ function SimpleDice() {
         setWager(Number(event.target.value));
     };
 
+    const onSliderValueChange = (value: number[], callback: { (value: SetStateAction<number>): void; (arg0: number): void; }) => {
+        callback(value[1])
+    }
 
     const toggleSelectedDice = (i: number) => {
         let dices = [...selectedDice];
@@ -190,7 +211,17 @@ function SimpleDice() {
                             {wager}
                         </span>
                     </div> */}
-                    <input className='content-container' value={wager} onChange={(e) => onWagerChange(e)} />
+                    <input type='number' className='content-container' value={wager} onChange={(e) => onWagerChange(e)} />
+                    <RangeSlider 
+                        className="single-thumb"
+                        defaultValue={[0, 0]}
+                        thumbsDisabled={[true, false]}
+                        rangeSlideDisabled={true}
+                        max={MAX}
+                        step={0.00001}
+                        value={[0, wager]}
+                        onInput={(v: number[]) => onSliderValueChange(v, setWager)}
+                    />
                     <div className="action-box">
                         <div className="multipliers">
                             <div className="half" onClick={() => handleWagerClick(0.5)}>
@@ -210,7 +241,7 @@ function SimpleDice() {
                 </div>
                 <div className="input-box">
                     <span className="title">Multiple Bets</span>
-                    <div className="content-container">
+                    {/* <div className="content-container">
                         <span className="content-text">
                             {mutipleBets}
                         </span>
@@ -218,7 +249,18 @@ function SimpleDice() {
                             <span onClick={() => handleMultipleBetsClick('up')}>▲</span>
                             <span onClick={() => handleMultipleBetsClick('down')}>▼</span>
                         </div>
-                    </div>
+                    </div> */}
+                    <input type='number' pattern="[0-9]*" className='content-container' value={mutipleBets} onChange={(e) => onMultipleBetsChange(e)} />
+                    <RangeSlider 
+                        className="single-thumb"
+                        defaultValue={[0, 0]}
+                        thumbsDisabled={[true, false]}
+                        rangeSlideDisabled={true}
+                        max={100}
+                        step={1}
+                        value={[0, mutipleBets]}
+                        onInput={(v: number[]) => onSliderValueChange(v, setMultipleBets)}
+                    />
                 </div>
                 <div className="divider"></div>
                 <div className="input-box">
