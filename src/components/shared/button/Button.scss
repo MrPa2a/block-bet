@@ -39,62 +39,62 @@ button {
   }
 
   &.primary {
-    background-color: #ffc146;
-    color: #503d16;
+    background-color: var(--primary-light);
+    color: var(--primary-dark);
 
     &:hover {
-      border-color: #ffc146;
-      filter: drop-shadow(0 0 0.5em #ffc146);
+      border-color: var(--primary-light);
+      filter: drop-shadow(0 0 0.5em var(--primary-light));
     }
 
     &.outline {
       background: transparent;
-      color: #ffc146;
-      border: 2px solid #ffc146;
+      color: var(--primary-light);
+      border: 2px solid var(--primary-light);
     }
 
     &:not(.outline, :disabled):active {
-      background-color: #503d16;
-      color: #806123;
-      border: 2px solid #503d16;
+      background-color: var(--primary-dark);
+      color: var(--primary-dark-light);
+      border: 2px solid var(--primary-dark);
       filter: none;
       transform: translateY(2px);
     }
 
     &.outline:not(:disabled):active {
-      color: #503d16;
-      border: 2px solid #503d16;
+      color: var(--primary-dark);
+      border: 2px solid var(--primary-dark);
       filter: none;
       transform: translateY(2px);
     }
   }
 
   &.secondary {
-    background-color: #cb5554;
-    color: #662b2a;
+    background-color: var(--secondary);
+    color: var(--secondary-dark);
 
     &:hover {
-      border-color: #cb5554;
-      filter: drop-shadow(0 0 0.5em #cb5554);
+      border-color: var(--secondary);
+      filter: drop-shadow(0 0 0.5em var(--secondary));
     }
 
     &.outline {
       background: transparent;
-      color: #cb5554;
-      border: 2px solid #cb5554;
+      color: var(--secondary);
+      border: 2px solid var(--secondary);
     }
 
     &:not(.outline, :disabled):active {
-      background-color: #662b2a;
-      color: #9C3030;
-      border: 2px solid #662b2a;
+      background-color: var(--secondary-dark);
+      color: var(--secondary-dark-light);
+      border: 2px solid var(--secondary-dark);
       filter: none;
       transform: translateY(2px);
     }
 
     &.outline:not(:disabled):active {
-      color: #662b2a;
-      border: 2px solid #662b2a;
+      color: var(--secondary-dark);
+      border: 2px solid var(--secondary-dark);
       filter: none;
       transform: translateY(2px);
     }

@@ -41,21 +41,19 @@
   transition: transform 6s;
 
   .selected {
-    background-color: #54cb58;
-    // background-color: #00e54e;
-    // background-color: #036837;
-    border: 1px solid #00802b;
+    background-color: var(--success);
+    border: 1px solid var(--success-dark);
   }
 }
 
 #cube div {
-  background: #cb5554;
+  background: var(--secondary);
   display: block;
   position: absolute;
   width: 200px;
   height: 100px;
   border-radius: 5px;
-  border: 2px solid #662b2a;
+  border: 2px solid var(--secondary-dark);
 
   margin: 0 auto;
 
@@ -69,7 +67,7 @@
   position: absolute;
   width: 30px;
   height: 30px;
-  background: #662b2a;
+  background: var(--secondary-dark);
   border-radius: 15px;
 }
 

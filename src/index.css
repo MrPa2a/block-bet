@@ -19,6 +19,28 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+
+  --background: linear-gradient(116.82deg, rgba(51, 0, 51, 0.5) 0%, rgba(162, 7, 7, 0.5) 100%);
+
+  --primary-light: #ffc146;
+  --primary: #FFAA00;
+  --primary-dark-light: #806123;
+  --primary-dark: #503D16;
+
+  --secondary-light: #DB8A8A;
+  --secondary: #cb5554;
+  --secondary-dark-light: #9C3030;
+  --secondary-dark: #662b2a;
+
+  --tertiary-light: #84c8ed;
+  --tertiary: #4fb1e5;
+  --tertiary-dark-light: #377ca0;
+  --tertiary-dark-light: #20475c;
+
+  --success-light: #87db8a;
+  --success: #54cb58;
+  --success-dark-light: #2b8c2e;
+  --success-dark: #1d5f1f;
 }
 
 body {

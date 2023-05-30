@@ -50,7 +50,7 @@
         flex-direction: column;
 
         p {
-          color: #db8a8a;
+          color: var(--secondary-light);
           font-size: 1.5rem;
         }
       }
@@ -84,7 +84,7 @@
       -webkit-animation: down 2s infinite;
 
       &:hover {
-        filter: drop-shadow(0 0 0.5em #ffc146);
+        filter: drop-shadow(0 0 0.5em var(--primary));
       }
     }
 
