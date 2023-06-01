@@ -17,12 +17,12 @@ function Games() {
     const GAMES: GameElement[] = [
         {
             name: "Dice",
-            logo: <DiceLogo/>,
+            logo: <DiceLogo />,
             component: <SimpleDice />,
         },
         {
             name: "Slider",
-            logo: <SliderLogo/>,
+            logo: <SliderLogo />,
             component: <SimpleDice />,
         },
     ];
@@ -35,19 +35,18 @@ function Games() {
             <div className="game-carrousel">
                 {
                     GAMES.map((game: GameElement) => {
-                        return <>
-                            <div 
-                                className={`game ${selectedGame.name === game.name ? 'selected' : ''}`}
-                                onClick={() => setSelectedGame(game)}
-                            >
-                                <div className="logo">
-                                    {game.logo}
-                                </div>
-                                <div className="name">
-                                    {game.name}
-                                </div>
+                        return <div
+                            key={game.name}
+                            className={`game ${selectedGame.name === game.name ? 'selected' : ''}`}
+                            onClick={() => setSelectedGame(game)}
+                        >
+                            <div className="logo">
+                                {game.logo}
                             </div>
-                        </>
+                            <div className="name">
+                                {game.name}
+                            </div>
+                        </div>
                     })
                 }
             </div>
