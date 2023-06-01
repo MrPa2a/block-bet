@@ -1,6 +1,6 @@
 import './BetInputs.scss';
 
-import { ChangeEvent, SetStateAction } from 'react';
+import { ChangeEvent } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 
 import RangeSlider from "react-range-slider-input";

@@ -5,13 +5,13 @@ import Button from "../../../shared/button/Button"
 
 import { useEffect, useState } from 'react';
 import BetInputs from '../../../shared/bets-input/BetInput';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { BetState } from '../../../../store/stateTypes';
 
 function SimpleDice() {
     const state = useSelector((state) => state);
     const betState = state as BetState;
-    const dispatch = useDispatch();
+    // const dispatch = useDispatch();
 
     const [selectedDice, setSelectedDice] = useState([] as number[]);
     const [multiplier, setMultiplier] = useState(0);
