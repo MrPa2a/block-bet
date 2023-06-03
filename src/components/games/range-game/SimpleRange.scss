@@ -1,0 +1,214 @@
+@keyframes float {
+  0% {
+    transform: translateY(-2px);
+  }
+  50% {
+    transform: translateY(2px);
+  }
+  100% {
+    transform: translateY(-2px);
+  }
+}
+
+// @-webkit-keyframes float {
+//   0% {
+//     transform: translateY(-2px);
+//   }
+//   100% {
+//     transform: translateY(2px);
+//   }
+//   100% {
+//     transform: translateY(-2px);
+//   }
+// }
+
+.range-game-container {
+  width: 100%;
+  margin: 50px 100px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+
+  .range-game {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 60%;
+    margin-right: 50px;
+
+    .range-slider-container {
+      width: 100%;
+      margin: 70px 0;
+
+      .range-single-thumb {
+        width: 100%;
+        background: var(--secondary-dark) !important;
+
+        &::before {
+          content: "0";
+          color: var(--secondary-dark);
+          position: relative;
+          top: 10px;
+        }
+
+        &::after {
+          content: "100";
+          color: var(--secondary-dark);
+          position: relative;
+          top: 10px;
+          left: calc(100% - 37px);
+        }
+
+        .range-slider__thumb[data-lower] {
+          width: 0;
+        }
+
+        .range-slider__thumb[data-upper] {
+          background: var(--primary-light) !important;
+          display: flex;
+          flex-direction: column-reverse;
+          align-items: center;
+
+          &::after {
+            display: flex;
+            content: var(--content, "50");
+            position: relative;
+            bottom: -30px;
+            text-align: center;
+            white-space: nowrap;
+            color: white;
+            font-size: 1.1rem;
+          }
+        }
+
+        & .range-slider__range {
+          border-radius: 6px;
+          background: var(--primary-light) !important;
+        }
+      }
+
+      .free-thumb {
+        width: 100%;
+        background: transparent !important;
+        margin-bottom: 5px;
+
+        .range-slider__thumb[data-lower] {
+          width: 0;
+        }
+
+        .range-slider__thumb[data-upper] {
+          background-color: transparent !important;
+          display: flex;
+          flex-direction: column-reverse;
+          align-items: center;
+          border-radius: 0;
+          height: 0;
+          width: 0;
+          border-top: 17px solid var(--indicator-color) !important;
+          border-right: 10px solid transparent;
+          border-left: 10px solid transparent;
+
+          &::before {
+            display: flex;
+            content: var(--content, "You win");
+            position: relative;
+            top: -20px;
+            text-align: center;
+            white-space: nowrap;
+            color: var(--indicator-color);
+            animation: float 2s infinite;
+            -webkit-animation: float 2s infinite;
+            font-size: 1.1rem;
+          }
+        }
+
+        & .range-slider__range {
+          border-radius: 6px;
+          background: transparent !important;
+        }
+      }
+    }
+
+    .range-inputs {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+
+      .range-outputs {
+        display: grid;
+        grid-template-columns: minmax(100px, 1fr) minmax(100px, 1fr);
+        gap: 20px;
+        width: 40%;
+        max-width: 40%;
+
+        .output-range {
+          .title {
+            font-size: 1.2rem;
+            color: var(--secondary-dark);
+          }
+
+          .content-container {
+            display: flex;
+            align-items: center;
+
+            width: 100%;
+            height: 44px;
+            
+            background-color: var(--secondary-dark-light);
+            border-radius: 7px;
+
+            .content-text {
+              font-size: 1.1rem;
+              margin-left: 10px;
+            }
+          }
+        }
+      }
+
+      .gains {
+        display: grid;
+        grid-template-columns: minmax(100px, 1fr) minmax(100px, 1fr);
+        gap: 20px;
+        width: 40%;
+        max-width: 40%;
+
+        .title {
+          font-size: 1.2rem;
+          color: var(--secondary-dark);
+        }
+
+        .input-range {
+          .content-container {
+            display: flex;
+            align-items: center;
+
+            width: 100%;
+            height: 40px;
+            
+            border: 2px solid var(--primary-light);
+            background-color: transparent;
+            border-radius: 7px;
+
+            overflow-x: scroll;
+
+            &::-webkit-scrollbar {
+              display: none;
+            }
+
+            .content-text {
+                font-size: 1.1rem;
+                margin-left: 10px;
+            }
+          }
+        }
+      }
+    }
+
+    .cta {
+      margin-top: 70px;
+    }
+  }
+}

@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 import RangeSlider from "react-range-slider-input";
 import "react-range-slider-input/dist/style.css";
+
 import { BetState } from '../../../store/stateTypes';
 import { updateMultipleBets, updateWager } from '../../../store/bets/betAction';
 
@@ -18,12 +19,12 @@ function BetInputs() {
             event.preventDefault();
         } else {
             const value = Math.floor(Number(event.target.value))
-            if (value <= 100) {
-                // setMultipleBets(value);
-                dispatch(updateMultipleBets(value));
-            } else {
-                // setMultipleBets(100);
+            if (value <= 0) {
                 dispatch(updateMultipleBets(100));
+            } else if (value > 100){
+                dispatch(updateMultipleBets(1));
+            } else {
+                dispatch(updateMultipleBets(value))
             }
         }
     };
@@ -37,12 +38,10 @@ function BetInputs() {
         } else {
             newVal = betState.MAX
         }
-        // setWager(newVal)
         dispatch(updateWager(newVal))
     }
 
     const onWagerChange = (event: ChangeEvent<HTMLInputElement>) => {
-        // setWager(Number(event.target.value));
         dispatch(updateWager(Number(event.target.value)))
     };
 

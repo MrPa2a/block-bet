@@ -1,10 +1,12 @@
 import "./Games.scss";
 
-import SimpleDice from "../../components/games/dice-game/simple-dice/SimpleDice";
 import { useState } from 'react';
 
 import { ReactComponent as DiceLogo } from "/public/dice.svg";
 import { ReactComponent as SliderLogo } from "/public/slider.svg";
+
+import SimpleDice from "../../components/games/dice-game/simple-dice/SimpleDice";
+import SimpleRange from "../../components/games/range-game/SimpleRange";
 
 interface GameElement {
     name: string;
@@ -23,11 +25,11 @@ function Games() {
         {
             name: "Slider",
             logo: <SliderLogo />,
-            component: <SimpleDice />,
+            component: <SimpleRange />,
         },
     ];
 
-    const [selectedGame, setSelectedGame] = useState(GAMES[0]);
+    const [selectedGame, setSelectedGame] = useState(GAMES[1]);
 
     return (
         <div className="games">
