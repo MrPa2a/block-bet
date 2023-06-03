@@ -29,7 +29,7 @@ function Games() {
         },
     ];
 
-    const [selectedGame, setSelectedGame] = useState(GAMES[1]);
+    const [selectedGame, setSelectedGame] = useState(GAMES[0]);
 
     return (
         <div className="games">

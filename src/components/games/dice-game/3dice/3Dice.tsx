@@ -123,7 +123,6 @@ const ThreeDDice: React.FC<ThreeDDiceProps> = ({
             const yRand = getRandom(max, min);
 
             if (cube.current) {
-                cube.current.style.animation = 'float 3s ease-in-out';
                 cube.current.style.webkitTransform = 'rotateX(' + xRand + 'deg) rotateY(' + yRand + 'deg)';
                 cube.current.style.transform = 'rotateX(' + xRand + 'deg) rotateY(' + yRand + 'deg)';
             }
