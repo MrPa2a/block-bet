@@ -7,6 +7,7 @@ import { ReactComponent as SliderLogo } from "/public/slider.svg";
 
 import SimpleDice from "../../components/games/dice-game/simple-dice/SimpleDice";
 import SimpleRange from "../../components/games/range-game/SimpleRange";
+import BetPanel from "../../components/shared/bets-panel/BetPanel";
 
 interface GameElement {
     name: string;
@@ -54,6 +55,9 @@ function Games() {
             </div>
             <div className="games-container">
                 {selectedGame.component}
+            </div>
+            <div className="bet-panel">
+                <BetPanel />
             </div>
         </div>
     );

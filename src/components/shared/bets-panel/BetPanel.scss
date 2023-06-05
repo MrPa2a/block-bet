@@ -1,0 +1,55 @@
+@import "../../../breakpoints.scss";
+
+.panel {
+    z-index: 1000;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #5F1415;
+  cursor: pointer;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  -webkit-box-shadow: 0 -6px 20px -10px black;
+  -moz-box-shadow: 0 -6px 20px -10px black;
+  box-shadow: 0 -6px 20px -10px black;
+
+  @include respond-to(default) {
+    display: flex;
+  }
+  @include respond-to(xsmall) {
+    display: flex;
+  }
+  @include respond-to(medium) {
+    display: none;
+  }
+
+  .header {
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    transition: background-color 0.3s ease-in-out;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+
+    &.expanded {
+      // background-color: var(--secondary);
+    }
+  }
+
+  .content {
+    padding: 10px;
+    transition: opacity 0.3s ease-in-out;
+
+    margin-bottom: 20px;
+
+    &.expanded {
+      opacity: 1;
+    }
+  }
+}

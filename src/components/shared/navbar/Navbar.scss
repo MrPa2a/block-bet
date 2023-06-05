@@ -37,12 +37,16 @@
       margin: 0 2rem;
       display: flex;
     }
+    @include respond-to(small) {
+      margin: 0 5rem;
+      display: flex;
+    }
     @include respond-to(medium) {
       margin: 0 5rem;
       display: flex;
     }
     @include respond-to(xmedium) {
-      margin: 0 5rem;
+      margin: 0 10rem;
       display: flex;
     }
     @include respond-to(large) {

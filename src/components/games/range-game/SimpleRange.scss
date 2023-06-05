@@ -1,3 +1,5 @@
+@import "../../../breakpoints.scss";
+
 @keyframes float {
   0% {
     transform: translateY(-2px);
@@ -10,25 +12,38 @@
   }
 }
 
-// @-webkit-keyframes float {
-//   0% {
-//     transform: translateY(-2px);
-//   }
-//   100% {
-//     transform: translateY(2px);
-//   }
-//   100% {
-//     transform: translateY(-2px);
-//   }
-// }
+@-webkit-keyframes float {
+  0% {
+    transform: translateY(-2px);
+  }
+  100% {
+    transform: translateY(2px);
+  }
+  100% {
+    transform: translateY(-2px);
+  }
+}
 
 .range-game-container {
   width: 100%;
-  margin: 50px 100px;
+  margin: 50px 70px;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
+
+  @include respond-to(default) {
+    margin: 20px 20px;
+    justify-content: center;
+  }
+  @include respond-to(xsmall) {
+    margin: 20px 20px;
+    justify-content: center;
+  }
+  @include respond-to(medium) {
+    margin: 50px 70px;
+    justify-content: space-around;
+  }
 
   .range-game {
     display: flex;
@@ -38,9 +53,37 @@
     width: 60%;
     margin-right: 50px;
 
+    @include respond-to(default) {
+      margin-right: 0;
+      width: 90%;
+    }
+    @include respond-to(xsmall) {
+      margin-right: 0;
+      width: 90%;
+    }
+    @include respond-to(medium) {
+      margin-right: 50px;
+    }
+
     .range-slider-container {
       width: 100%;
       margin: 70px 0;
+
+      @include respond-to(default) {
+        margin: 30px 0;
+      }
+      @include respond-to(xsmall) {
+        margin: 30px 0;
+      }
+      @include respond-to(small) {
+        margin: 50px 0;
+      }
+      @include respond-to(medium) {
+        margin: 50px 0;
+      }
+      @include respond-to(large) {
+        margin: 70px 0;
+      }
 
       .range-single-thumb {
         width: 100%;
@@ -132,17 +175,54 @@
     }
 
     .range-inputs {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
       width: 100%;
+
+      @include respond-to(default) {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      @include respond-to(xsmall) {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      @include respond-to(medium) {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      @include respond-to(large) {
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+      }
+      @include respond-to(xlarge) {
+        grid-template-columns: 1fr 1fr;
+        gap: 100px;
+      }
 
       .range-outputs {
         display: grid;
         grid-template-columns: minmax(100px, 1fr) minmax(100px, 1fr);
         gap: 20px;
-        width: 40%;
-        max-width: 40%;
+        width: 100%;
+
+        @include respond-to(default) {
+          grid-template-columns: minmax(100px, 1fr);
+          gap: 5px;
+        }
+        @include respond-to(xsmall) {
+          grid-template-columns: minmax(100px, 1fr) minmax(100px, 1fr);
+          gap: 5px;
+        }
+        @include respond-to(medium) {
+          grid-template-columns: minmax(100px, 1fr) minmax(100px, 1fr);
+          gap: 10px;
+        }
+        @include respond-to(large) {
+          grid-template-columns: minmax(100px, 1fr) minmax(100px, 1fr);
+          gap: 20px;
+        }
 
         .output-range {
           .title {
@@ -156,7 +236,7 @@
 
             width: 100%;
             height: 44px;
-            
+
             background-color: var(--secondary-dark-light);
             border-radius: 7px;
 
@@ -172,8 +252,24 @@
         display: grid;
         grid-template-columns: minmax(100px, 1fr) minmax(100px, 1fr);
         gap: 20px;
-        width: 40%;
-        max-width: 40%;
+        width: 100%;
+
+        @include respond-to(default) {
+          grid-template-columns: minmax(100px, 1fr);
+          gap: 5px;
+        }
+        @include respond-to(xsmall) {
+          grid-template-columns: minmax(100px, 1fr) minmax(100px, 1fr);
+          gap: 5px;
+        }
+        @include respond-to(medium) {
+          grid-template-columns: minmax(100px, 1fr) minmax(100px, 1fr);
+          gap: 10px;
+        }
+        @include respond-to(large) {
+          grid-template-columns: minmax(100px, 1fr) minmax(100px, 1fr);
+          gap: 20px;
+        }
 
         .title {
           font-size: 1.2rem;
@@ -185,9 +281,9 @@
             display: flex;
             align-items: center;
 
-            width: 100%;
+            width: calc(100% - 4px);
             height: 40px;
-            
+
             border: 2px solid var(--primary-light);
             background-color: transparent;
             border-radius: 7px;
@@ -199,8 +295,8 @@
             }
 
             .content-text {
-                font-size: 1.1rem;
-                margin-left: 10px;
+              font-size: 1.1rem;
+              margin-left: 10px;
             }
           }
         }
@@ -209,6 +305,31 @@
 
     .cta {
       margin-top: 70px;
+
+      @include respond-to(default) {
+        margin-top: 30px;
+      }
+      @include respond-to(xsmall) {
+        margin-top: 30px;
+      }
+      @include respond-to(medium) {
+        margin-top: 50px;
+      }
+      @include respond-to(large) {
+        margin-top: 70px;
+      }
+    }
+  }
+
+  .range-bets {
+    @include respond-to(default) {
+      display: none;
+    }
+    @include respond-to(xsmall) {
+      display: none;
+    }
+    @include respond-to(medium) {
+      display: block;
     }
   }
 }

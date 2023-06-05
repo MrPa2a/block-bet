@@ -140,7 +140,7 @@ function SimpleDice() {
                 </div>
                 <div className="gains">
                     <div className="input-box">
-                        <span className="title">Total Wager</span>
+                        <span className="title">Total wager</span>
                         <div className="content-container">
                             <span className="content-text">
                                 {totalWager}
@@ -160,7 +160,9 @@ function SimpleDice() {
                     <Button label="Roll" onClick={handleRollClick} disabled={isRolling || selectedDice.length === 0 || betState.wager === 0} />
                 </div>
             </div>
-            <BetInputs />
+            <div className="dice-bets">
+                <BetInputs />
+            </div>
         </div>
     );
 }

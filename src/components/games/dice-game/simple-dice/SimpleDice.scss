@@ -1,3 +1,5 @@
+@import "../../../../breakpoints.scss";
+
 .dice-game-container {
   width: 100%;
   margin: 50px;
@@ -6,14 +8,47 @@
   align-items: center;
   justify-content: space-around;
 
+  @include respond-to(default) {
+    flex-direction: column;
+    margin: 40px 10px;
+  }
+  @include respond-to(xsmall) {
+    flex-direction: column;
+    margin: 50px 10px;
+  }
+  @include respond-to(medium) {
+    display: grid;
+    grid-template-areas: 
+    "inputs bets"
+    "outputs bets";
+    margin: 50px;
+  }
+  @include respond-to(large) {
+    display: flex;
+    flex-direction: row;
+    margin: 50px;
+  }
+
   .dices-choice {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    grid-area: inputs; // only for medium breakpoints
 
     .dices {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       gap: 20px;
+
+      @include respond-to(default) {
+        grid-template-columns: 1fr 1fr;
+      }
+      @include respond-to(xsmall) {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+      @include respond-to(large) {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
 
       .dice {
         cursor: pointer;
@@ -35,8 +70,6 @@
         }
 
         &.selected {
-          // background-color: var(--success);
-          // border: 2px solid var(--success-dark);
           background-color: var(--primary-light);
           border: 3px solid var(--primary-dark-light);
 
@@ -143,6 +176,17 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    grid-area: outputs; // only for medium breakpoints
+
+    @include respond-to(default) {
+      margin-top: 80px;
+    }
+    @include respond-to(xsmall) {
+      margin-top: 80px;
+    }
+    @include respond-to(large) {
+      margin-top: 0;
+    }
 
     .gains {
       display: grid;
@@ -159,7 +203,7 @@
         display: flex;
         flex-direction: column;
         align-items: start;
-        
+
         .content-container {
           display: flex;
           align-items: center;
@@ -175,7 +219,7 @@
           border: 2px solid var(--primary-light);
           color: white;
 
-          &::-webkit-scrollbar{
+          &::-webkit-scrollbar {
             display: none;
           }
         }
@@ -196,6 +240,21 @@
       button {
         width: 100%;
       }
+    }
+  }
+
+  .dice-bets {
+    align-self: flex-start;
+    grid-area: bets; // only for medium breakpoints
+
+    @include respond-to(default) {
+      display: none;
+    }
+    @include respond-to(xsmall) {
+      display: none;
+    }
+    @include respond-to(medium) {
+      display: block;
     }
   }
 }

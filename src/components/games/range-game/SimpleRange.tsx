@@ -218,7 +218,7 @@ function SimpleRange() {
                     </div>
                     <div className="gains">
                         <div className="input-range">
-                            <span className="title">Total Wager</span>
+                            <span className="title">Total wager</span>
                             <div className="content-container">
                                 <span className="content-text">
                                     {totalWager}
@@ -239,7 +239,9 @@ function SimpleRange() {
                     <Button label='Launch' onClick={handleButtonClick} disabled={isRolling || !betState.wager} />
                 </div>
             </div>
-            <BetInputs />
+            <div className="range-bets">
+                <BetInputs />
+            </div>
         </div>
     );
 }
