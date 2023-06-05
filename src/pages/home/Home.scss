@@ -120,9 +120,17 @@
       cursor: pointer;
       animation: down 2s infinite;
       -webkit-animation: down 2s infinite;
+      right: 50%;
 
-      @include respond-to(medium) {
+      @include respond-to(default) {
+        display: none;
+      }
+      @include respond-to(xsmall) {
+        display: none;
+      }
+      @include respond-to(xmedium) {
         right: 50%;
+        display: flex;
       }
 
       &:hover {
