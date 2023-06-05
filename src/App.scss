@@ -1,3 +1,5 @@
+@import './breakpoints.scss';
+
 #root {
   width: 100%;
   margin: 0 auto;
@@ -6,6 +8,28 @@
 
 .main {
   padding: 60px 10rem 0 10rem;
+
+  @include respond-to(default) {
+    padding: 60px 2rem;
+  }
+  @include respond-to(xsmall) {
+    padding: 60px 2rem;
+  }
+  @include respond-to(small) {
+    padding: 60px 2rem;
+  }
+  @include respond-to(medium) {
+    padding: 60px 5rem 5rem 5rem;
+  }
+  @include respond-to(xmedium) {
+    padding: 60px 10rem 5rem 10rem;
+  }
+  @include respond-to(large) {
+    padding: 60px 10rem 15rem 10rem;
+  }
+  @include respond-to(xlarge) {
+    padding: 60px 20rem 30rem 20rem;
+  }
 }
 
 .modal-container {

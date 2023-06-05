@@ -1,3 +1,5 @@
+@import '../../../breakpoints.scss';
+
 @keyframes slideInFromBot {
   0% {
     transform: translateY(100%);
@@ -11,18 +13,30 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  width: 25%;
   padding: 1rem;
   border-radius: 25px;
   position: relative;
   overflow: hidden;
+
+  @include respond-to(default) {
+    width: calc(100% - 1rem - 25px);
+    margin-top: 2rem;
+  }
+  @include respond-to(xsmall) {
+    width: calc(100% - 1rem - 25px);
+    margin-top: 2rem;
+  }
+  @include respond-to(medium) {
+    width: 25%;
+  }
 
   &.primary {
     color: var(--primary-light);
     border: 2px solid var(--primary-light);
 
     &:hover {
-      box-shadow: 0 0 15px var(--primary-light), inset 0 0 10px var(--primary-light);
+      box-shadow: 0 0 15px var(--primary-light),
+        inset 0 0 10px var(--primary-light);
     }
   }
 
@@ -31,7 +45,8 @@
     border: 2px solid var(--secondary-light);
 
     &:hover {
-      box-shadow: 0 0 15px var(--secondary-light), inset 0 0 10px var(--secondary-light);
+      box-shadow: 0 0 15px var(--secondary-light),
+        inset 0 0 10px var(--secondary-light);
     }
   }
 

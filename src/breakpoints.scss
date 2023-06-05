@@ -1,0 +1,24 @@
+$breakpoints: (
+  "default": 539px,
+  "xsmall": 540px,
+  // between 0 and 539, then 540+
+  "small": 760px,
+  // above
+  "medium": 900px,
+  "xmedium": 1024px,
+  "large": 1300px,
+  "xlarge": 1900px,
+  "xxlarge": 2500px,
+);
+
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == default {
+    @media (max-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  } @else {
+    @media (min-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  }
+}

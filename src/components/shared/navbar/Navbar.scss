@@ -1,3 +1,5 @@
+@import "../../../breakpoints.scss";
+
 .navbar {
   z-index: 1000;
   height: 60px;
@@ -6,70 +8,124 @@
   position: fixed;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15), 0px 4px 8px rgba(0, 0, 0, 0.15),
     0px 8px 16px rgba(0, 0, 0, 0.15), 0px 16px 32px rgba(0, 0, 0, 0.15);
-}
 
-.container {
-  margin: 0 10rem;
-  padding: 0 15px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 100%;
-}
+  @include respond-to(default) {
+    // display: none;
+  }
+  @include respond-to(xsmall) {
+    // display: none;
+  }
+  @include respond-to(small) {
+    // display: none;
+  }
+  @include respond-to(medium) {
+    // display: block;
+  }
 
-.logo {
-  height: 40px;
-}
-
-.nav-elements {
-  height: auto;
-  transition: all 1s;
-
-  ul {
+  .container {
+    margin: 0 10rem;
     display: flex;
     justify-content: space-between;
-    list-style-type: none;
-
-    li:not(:last-child) {
-      margin-right: 60px;
+    align-items: center;
+    height: 100%;
+  
+    @include respond-to(default) {
+      margin: 0 2rem;
+      display: flex;
+    }
+    @include respond-to(xsmall) {
+      margin: 0 2rem;
+      display: flex;
+    }
+    @include respond-to(medium) {
+      margin: 0 5rem;
+      display: flex;
+    }
+    @include respond-to(xmedium) {
+      margin: 0 5rem;
+      display: flex;
+    }
+    @include respond-to(large) {
+      margin: 0 10rem;
+      display: flex;
+    }
+    @include respond-to(xlarge) {
+      margin: 0 10rem;
+      display: flex;
+    }
+    @include respond-to(xxlarge) {
+      margin: 0 10rem;
+      display: flex;
     }
 
-    a {
-      font-size: 16px;
-      font-weight: 400;
-      color: var(--secondary);
-      text-decoration: none;
+    .logo {
+      height: 40px;
+    }
 
-      &:hover:not(.active) {
-        color: var(--secondary-light);
-        position: relative;
+    .nav-elements {
+      height: auto;
+      transition: all 1s;
+    
+      ul {
+        display: flex;
+        justify-content: space-between;
+        list-style-type: none;
+    
+        li:not(:last-child) {
+          margin-right: 60px;
 
-        &::after {
-          content: "";
-          position: absolute;
-          bottom: -4px;
-          left: 0;
-          width: 100%;
-          height: 2px;
-          background-color: var(--secondary-light);
+          @include respond-to(default) {
+            display: none;
+          }
+          @include respond-to(xsmall) {
+            display: none;
+          }
+          @include respond-to(medium) {
+            display: block;
+          }
         }
-      }
-
-      &.active {
-        color: var(--primary-light);
-        font-weight: 500;
-        position: relative;
-      }
-
-      &.active::after {
-        content: "";
-        position: absolute;
-        bottom: -4px;
-        left: 0;
-        width: 100%;
-        height: 2px;
-        background-color: var(--primary-light);
+    
+        a {
+          font-size: 16px;
+          font-weight: 400;
+          color: var(--secondary);
+          text-decoration: none;
+    
+          &:hover:not(.active) {
+            color: var(--secondary-light);
+            position: relative;
+    
+            &::after {
+              content: "";
+              position: absolute;
+              bottom: -4px;
+              left: 0;
+              width: 100%;
+              height: 2px;
+              background-color: var(--secondary-light);
+            }
+          }
+    
+          &.active {
+            color: var(--primary-light);
+            font-weight: 500;
+            position: relative;
+          }
+    
+          &.active::after {
+            content: "";
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--primary-light);
+          }
+        }
       }
     }
   }
 }
+
+
+
