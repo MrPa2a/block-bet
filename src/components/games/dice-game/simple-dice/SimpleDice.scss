@@ -18,9 +18,9 @@
   }
   @include respond-to(medium) {
     display: grid;
-    grid-template-areas: 
-    "inputs bets"
-    "outputs bets";
+    grid-template-areas:
+      "inputs bets"
+      "outputs outputs";
     margin: 50px;
   }
   @include respond-to(large) {
@@ -194,6 +194,14 @@
       gap: 20px;
       margin-bottom: 50px;
 
+      @include respond-to(default) {
+        grid-template-columns: 1fr;
+        width: 100%;
+      }
+      @include respond-to(xsmall) {
+        grid-template-columns: 1fr 1fr;
+      }
+
       .title {
         font-size: 1.2rem;
         color: var(--secondary-dark);
@@ -219,6 +227,10 @@
           border: 2px solid var(--primary-light);
           color: white;
 
+          @include respond-to(default) {
+            width: 100%;
+          }
+
           &::-webkit-scrollbar {
             display: none;
           }
@@ -236,6 +248,19 @@
 
     .cta {
       width: 100%;
+
+      @include respond-to(default) {
+        width: 100%;
+      }
+      @include respond-to(xsmall) {
+        width: 100%;
+      }
+      @include respond-to(medium) {
+        width: 40%;
+      }
+      @include respond-to(large) {
+        width: 100%;
+      }
 
       button {
         width: 100%;

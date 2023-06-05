@@ -28,7 +28,7 @@
     justify-content: space-between;
     align-items: center;
     height: 100%;
-  
+
     @include respond-to(default) {
       margin: 0 2rem;
       display: flex;
@@ -69,12 +69,12 @@
     .nav-elements {
       height: auto;
       transition: all 1s;
-    
+
       ul {
         display: flex;
         justify-content: space-between;
         list-style-type: none;
-    
+
         li:not(:last-child) {
           margin-right: 60px;
 
@@ -88,17 +88,17 @@
             display: block;
           }
         }
-    
+
         a {
           font-size: 16px;
           font-weight: 400;
           color: var(--secondary);
           text-decoration: none;
-    
+
           &:hover:not(.active) {
             color: var(--secondary-light);
             position: relative;
-    
+
             &::after {
               content: "";
               position: absolute;
@@ -109,13 +109,13 @@
               background-color: var(--secondary-light);
             }
           }
-    
+
           &.active {
             color: var(--primary-light);
             font-weight: 500;
             position: relative;
           }
-    
+
           &.active::after {
             content: "";
             position: absolute;
@@ -130,6 +130,3 @@
     }
   }
 }
-
-
-

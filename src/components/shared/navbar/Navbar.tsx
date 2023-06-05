@@ -31,7 +31,7 @@ function Navbar() {
                             <NavLink to="/contact">Analytics</NavLink>
                         </li>
                         <li>
-                            <Button label="Connect wallet" small onClick={() => {}} />
+                            <Button label="Connect wallet" small onClick={() => { }} />
                         </li>
                     </ul>
                 </div>

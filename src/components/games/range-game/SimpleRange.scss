@@ -213,7 +213,7 @@
         }
         @include respond-to(xsmall) {
           grid-template-columns: minmax(100px, 1fr) minmax(100px, 1fr);
-          gap: 5px;
+          gap: 10px;
         }
         @include respond-to(medium) {
           grid-template-columns: minmax(100px, 1fr) minmax(100px, 1fr);
@@ -260,7 +260,7 @@
         }
         @include respond-to(xsmall) {
           grid-template-columns: minmax(100px, 1fr) minmax(100px, 1fr);
-          gap: 5px;
+          gap: 10px;
         }
         @include respond-to(medium) {
           grid-template-columns: minmax(100px, 1fr) minmax(100px, 1fr);

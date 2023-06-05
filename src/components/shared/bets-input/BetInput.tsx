@@ -21,7 +21,7 @@ function BetInputs() {
             const value = Math.floor(Number(event.target.value))
             if (value <= 0) {
                 dispatch(updateMultipleBets(100));
-            } else if (value > 100){
+            } else if (value > 100) {
                 dispatch(updateMultipleBets(1));
             } else {
                 dispatch(updateMultipleBets(value))
